@@ -94,11 +94,7 @@ STATIC_URL = '/static/'
 TEMPLATE_DIRS= (
    os.path.join(BASE_DIR,"static",  "templates"),
    )
-
-print "template: ", TEMPLATE_DIRS
-print "base:", BASE_DIR
-
-
+    
 
 if DEBUG:
     MEDIA_URL= '/media/'
@@ -112,7 +108,7 @@ if DEBUG:
 
     print STATIC_ROOT, "static root"
 #######################################################
-"""
+
 
 # Parse database configuration from $DATABASE_URL
 import dj_database_url
@@ -132,4 +128,4 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
-)"""
+)
