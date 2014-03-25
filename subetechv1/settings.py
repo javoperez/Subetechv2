@@ -92,24 +92,27 @@ STATIC_URL = '/static/'
 ###### Directorios de Media, Staticos, etc
 
 TEMPLATE_DIRS= (
-   os.path.join(os.path.dirname(BASE_DIR),"SubetechDeployv2","static",  "templates"),
+   os.path.join(BASE_DIR,"static",  "templates"),
    )
+
+print "template: ", TEMPLATE_DIRS
+print "base:", BASE_DIR
 
 
 
 if DEBUG:
     MEDIA_URL= '/media/'
  
-    STATIC_ROOT= os.path.join(os.path.dirname(BASE_DIR),"SubetechDeployv2","static","static-only")
-    MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "SubetechDeployv2","static","media")
+    STATIC_ROOT= os.path.join(BASE_DIR,"static","static-only")
+    MEDIA_ROOT = os.path.join(BASE_DIR, "static","media")
     STATICFILES_DIRS= DIRS= (
-            os.path.join(os.path.dirname(BASE_DIR),"SubetechDeployv2","static", "static"),
+            os.path.join(BASE_DIR,"static", "static"),
     
         )
 
     print STATIC_ROOT, "static root"
 #######################################################
-
+"""
 
 # Parse database configuration from $DATABASE_URL
 import dj_database_url
@@ -129,4 +132,4 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
-)
+)"""
