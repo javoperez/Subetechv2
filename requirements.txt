@@ -12,7 +12,6 @@ greenlet==0.4.1
 gunicorn==18.0
 js.jquery==1.9.1
 psycopg2==2.5.2
-pyDOE==0.3
 pystache==0.5.3
 pytest==2.4.2
 qrcode==4.0.4
