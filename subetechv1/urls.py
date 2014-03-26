@@ -19,7 +19,7 @@ urlpatterns = patterns('',
     url(r'^acerca_de/', 'frontend.views.aboutus', name='aboutus'),
     url(r'^comentario/', 'frontend.views.coment', name='comentario'),
     url(r'^gracias/', 'frontend.views.gracias', name='gracias'),
-    
+    url(r'^paypal/', 'frontend.views.paypal', name='paypal'),
 )
 
 ############## LOCATE STATICS

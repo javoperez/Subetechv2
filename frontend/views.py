@@ -41,3 +41,10 @@ def gracias(request):
 	return render_to_response("gracias.html",
 									 locals(),
 					 					context_instance=RequestContext(request))
+
+
+def paypal(request):
+	print "paypal"
+	return render_to_response("paypalv2.html",
+									 locals(),
+					 					context_instance=RequestContext(request))
