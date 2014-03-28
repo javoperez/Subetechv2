@@ -20,6 +20,7 @@ urlpatterns = patterns('',
     url(r'^comentario/', 'frontend.views.coment', name='comentario'),
     url(r'^gracias/', 'frontend.views.gracias', name='gracias'),
     url(r'^paypal/', 'frontend.views.paypal', name='paypal'),
+    url(r'^gps/', 'frontend.views.gps', name='gps'),
 )
 
 ############## LOCATE STATICS

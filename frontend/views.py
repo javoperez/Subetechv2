@@ -48,3 +48,10 @@ def paypal(request):
 	return render_to_response("paypalv2.html",
 									 locals(),
 					 					context_instance=RequestContext(request))
+
+
+def gps(request):
+	print "gps"
+	return render_to_response("gps.html",
+									 locals(),
+					 					context_instance=RequestContext(request))
