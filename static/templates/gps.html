@@ -1,33 +1,94 @@
 {% extends 'index.html' %}
 
 {% block content %}
- <hr class="featurette-divider">
-<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-    <style type="text/css">
-      html { height: 100% }
-      body { height: 100%; margin: 0; padding: 0 }
-      #map-canvas { height: 100% }
-    </style>
-    <script type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPAqZOXaufJt2j3yFdoWQaYgVY8GrhfpY&sensor=false">
-    </script>
-    <script type="text/javascript">
-      function initialize() {
-        var mapOptions = {
-          center: new google.maps.LatLng(18.805519699999998, -99.2217979),
-          zoom: 15
-        };
-        var map = new google.maps.Map(document.getElementById("map-canvas"),
-            mapOptions);
+<html>
+<head>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+  <title>Posicionamiento</title>
+  <meta charset="UTF-8" />
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css' />
+  <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
+  <style>
+  
+  * { margin: 0; padding: 0; }
+  html { height: 100%; }
+  body { background-image: url(images/bg.jpg); font-size: 16px; font-family: 'Open Sans', sans-serif; height: 100%; position: relative; }
+  header { background-color: rgba(0,0,0,.88); height: 85px; width: 100%; position: fixed; z-index: 99; box-shadow: 0px 2px 3px #333333; }
+  header > img { float: left; }
+  header > h1 { display: inline; color: #FFFFFF; font-family: 'Open Sans', sans-serif; font-size: 1.3em; font-weight: normal; float: right; margin-top: 55px; margin-right: 10px; }
+  
+  #mapa { position: absolute; background: transparent; height: 100%; width: 100%; top: 0; left: 0; right: 0; bottom: 0; }
+  #informacion { position: absolute; background: rgba(0,16,27,.85); z-index: 200; top: 70%; width: 30%; padding: 12px; }
+  
+  #informacion h2,
+  #informacion h3 { color: #FFFFFF; text-shadow: 1px 1px 1px #000000; font-weight: normal; font-size: .9em; }
+  
+  #informacion h2 { font-size: 1.1em; margin-bottom: 10px; }
+  
+  #informacion h3 span { color: #FF5555; }
+  
+  </style>
+  <script type="text/javascript">
+  
+  function informacion (coordenadas) {
+    $("#latitude").html(coordenadas.Lat);
+    $("#longitude").html(coordenadas.Lng);
+  }
+  
+  function initialize() {
+    
+    var coordenadas = {
+      Lat: 0,
+      Lng: 0
+    };
+    
+    function localizacion (posicion) {
+      coordenadas = {
+        Lat: posicion.coords.latitude,
+        Lng: posicion.coords.longitude
       }
-      google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
-  </head>
-  <body>
-  El camión va aqui:
-    <div id="map-canvas"/>
-  </body>
-
+      
+      informacion(coordenadas);
+      
+      var mapOptions = {
+        zoom: 16,
+        center: new google.maps.LatLng(coordenadas.Lat, coordenadas.Lng),
+        disableDefaultUI: true,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      }
+      
+      var map = new google.maps.Map(document.getElementById('mapa'), mapOptions);
+      
+      var infowindow = new google.maps.InfoWindow({
+        map: map,
+        position: new google.maps.LatLng(coordenadas.Lat, coordenadas.Lng),
+        content: 'Aqui estas'
+            });
+    }
+    
+    function errores (error) {
+      alert('Ha ocurrido un error al obtener la información');
+    }
+    
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(localizacion,errores);
+    } else {
+      alert("Tu navegador no soporta la 'Geolocalización'");
+    }
+    
+  }
+  </script>
+</head>
+<body onload="initialize()">
+  <section id="informacion">
+    <h2>Tu posición actual es:</h2>
+    <h3>Latitud: <span id="latitude"></span></h3>
+    <h3>Longitud: <span id="longitude"></span></h3>
+  </section>
+  <section id="mapa"></section>
+</body>
+</html>
 
 
 {% endblock %}
