@@ -1,7 +1,9 @@
 {% extends 'index.html' %}
 
 {% block content %}
-    <!-- Carousel
+    <!-- Carousel 
+    ================================================== -->
+    <!-- Se quito el parrafo de los botones del carrusel para evitar cambiarle el fondo
     ================================================== -->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
@@ -17,7 +19,7 @@
             <div class="carousel-caption">
               <h1>Pagos Flexibles</h1>
               <p>Puedes pagar en efectivo o incluso en paypal</p>
-              <p><a class="btn btn-lg btn-primary" href="/paypal" role="button">Registrate</a></p>
+              <<a class="btn btn-lg btn-primary" href="/paypal" role="button">Registrate</a>
             </div>
           </div>
         </div>
@@ -27,7 +29,7 @@
             <div class="carousel-caption">
               <h1>Geolocalización</h1>
               <p>Sabrás exactamente donde y cuando pasa tu camión</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Localiza</a></p>
+              <a class="btn btn-lg btn-primary" href="/gps" role="button">Localiza</a>
             </div>
           </div>
         </div>
@@ -37,7 +39,7 @@
             <div class="carousel-caption">
               <h1>Administración</h1>
               <p>Puedes consultar estados de cuenta, pagos, etc</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Mi información</a></p>
+              <a class="btn btn-lg btn-primary" href="#" role="button">Mi información</a>
             </div>
           </div>
         </div>
@@ -61,8 +63,9 @@
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading">Subetec <span class="text-muted">¿Quiénes Somos?</span></h2>
-          <p class="lead">Subetech es una empresa que bla bla bla</p>
+          <h2 class="featurette-heading">Subetec <br> <span class="text-muted">¿Quiénes Somos?</span></h2>
+          <p class="lead"> ¿A cuántos no les ha pasado que llegan a la parada de su autobús y no tienen ni la más mínima idea de si ya pasó su camión? O peor aún... cuantas veces no has tenido que correr e incluso brincar para abordar el camión que está a punto de irse. <br>
+          Subetech es un desarrollo que busca inovar por medio del uso de la tecnología la manera en que el usuario vive la experiencia de tranporte.</p>
         </div>
         <div class="col-md-5">
           <img class="featurette-image img-responsive" src="/media/logo500.jpg" alt="Generic placeholder image">
@@ -73,11 +76,11 @@
 
       <div class="row featurette">
         <div class="col-md-5">
-          <img class="featurette-image img-responsive" src="/media/hardware.jpg" alt="Generic placeholder image" width="500" height="500">
+          <img class="featurette-image img-responsive" src="/media/satelites.jpg" alt="Generic placeholder image" width="500" height="500">
         </div>
         <div class="col-md-7">
-          <h2 class="featurette-heading">Electrónica<span class="text-muted">Sensores, Gps, Cámaras, etc</span></h2>
-          <p class="lead">bla bla bla</p>
+          <h2 class="featurette-heading">Electrónica <br> <span class="text-muted">Sensores, Gps, Cámaras, etc</span></h2>
+          <p class="lead">Se implementaron sensores de presencia para detectar entradas y salidas al camión, un lector de código de barras para hacer los cobros automáticos de prepago, un módulo GPS para monitorear la velocidad a la que conduce cada chofer y la ubicación del vehículo, y por último cámaras que transmiten en vivo lo que ocurre dentro del camión, para proporcionar mayor seguridad.</p>
         </div>
       </div>
 
@@ -85,8 +88,12 @@
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading">Software <span class="text-muted">Aplicación Web de usuario y Administradores</span></h2>
-          <p class="lead">y asi y asi y asi</p>
+          <h2 class="featurette-heading">Software <br>  <span class="text-muted">Aplicación Web de usuario y Administradores</span></h2>
+          <p class="lead"> 
+          La ubicación del camión , la velocidad, la cámara, los cobros, los abordajes... Todo está siendo monitoreado en vivo vía internet. Haciendo uso de tecnologías de punta de tiempo real, algoritmos de encriptación, programación de alto nivel con el fin de brindarle una nueva experiencia al usuario. <br>
+          Además el administrador puede ver comportamientos de los usuarios, tendencias en las ventas, estadísticas, historiales y logística de sus líneas de transporte. 
+        
+          </p>
         </div>
         <div class="col-md-5">
           <img class="featurette-image img-responsive" src="/media/software.png" alt="Generic placeholder image">
@@ -94,6 +101,5 @@
       </div>
 
   
-
 
 {% endblock %}

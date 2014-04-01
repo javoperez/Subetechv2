@@ -1,7 +1,7 @@
 {% extends 'index.html' %}
 
 {% block content %}
-<html>
+      <hr class="featurette-divider">
 <head>
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
   <title>Posicionamiento</title>
@@ -41,6 +41,11 @@
     var coordenadas = {
       Lat: 0,
       Lng: 0
+    };
+    
+       var coordenadas = {
+      Lat1:  18.809174700000003,
+      Lng1: -99.2205887
     };
     
     function localizacion (posicion) {
@@ -88,7 +93,6 @@
   </section>
   <section id="mapa"></section>
 </body>
-</html>
 
 
 {% endblock %}

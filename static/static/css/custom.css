@@ -9,3 +9,15 @@ display: inline-block;
 padding-left: 8%;
 padding-right: 8%;
 }
+
+h1, .h1 {
+font-size: 36px;
+background: black;
+}
+
+.carousel-caption p {
+margin-bottom: 20px;
+font-size: 21px;
+line-height: 1.4;
+background-color: rgb(89, 124, 151);
+}
