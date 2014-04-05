@@ -6,7 +6,7 @@ class Comentario(models.Model):
 	nombre= models.CharField(max_length=40,null=True, blank=True)
 	email= models.EmailField(null=False, blank=False)
 	timestamp= models.DateTimeField(auto_now_add=True, auto_now= False)
-	comentario= models.CharField(max_length=500,null=True, blank=True)
+	comentario= models.TextField(max_length=500,null=True, blank=True)
 
 	def __unicode__(self):
 		return smart_unicode(self.nombre)
